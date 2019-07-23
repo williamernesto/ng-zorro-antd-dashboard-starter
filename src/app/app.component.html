@@ -1,0 +1,73 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo">
+      {{ title }}
+    </div>
+    <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu>
+        <span title
+          ><i nz-icon nzType="dashboard"></i><span>Dashboard</span></span
+        >
+        <ul>
+          <li nz-menu-item>Cards</li>
+          <li nz-menu-item>Tables</li>
+          <li nz-menu-item>Files</li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen>
+        <span title><i nz-icon nzType="appstore"></i><span>Pages</span></span>
+        <ul>
+          <li nz-menu-item>403</li>
+          <li nz-menu-item>404</li>
+          <li nz-menu-item>500</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <i
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></i>
+      <div class="user-area">
+        <span>John Doe</span>
+        <nz-badge [nzCount]="5" style="margin-right: 24px;">
+          <nz-avatar
+            (click)="open()"
+            nzIcon="user"
+            nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+          ></nz-avatar>
+        </nz-badge>
+      </div>
+    </nz-header>
+    <nz-content>
+      <app-home></app-home>
+    </nz-content>
+    <nz-drawer
+    [nzClosable]="true"
+    [nzVisible]="visible"
+    nzPlacement="right"
+    nzTitle="User Notifications"
+    (nzOnClose)="close()"
+  >
+  <nz-list [nzDataSource]="data" [nzRenderItem]="item" [nzItemLayout]="'horizontal'" [nzLoading]="loading">
+    <ng-template #item let-item>
+      <nz-list-item>
+        <nz-list-item-meta
+          [nzTitle]="nzTitle"
+          nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+          nzDescription="Ant Design, a design language for background applications"
+        >
+          <ng-template #nzTitle>
+            <a href="https://ng.ant.design">{{ item.title }}</a>
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+  </nz-drawer>
+  </nz-layout>
+</nz-layout>
