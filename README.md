@@ -7,3 +7,6 @@
 
 # Examples
 [ng-alain](https://ng-alain.github.io/ng-alain/#/passport/login)
+
+# Npm
+[View on Npmjs.com](https://www.npmjs.com/package/ng-zorro-antd)
