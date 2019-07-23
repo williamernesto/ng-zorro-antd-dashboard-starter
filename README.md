@@ -1,3 +1,3 @@
 # ng-zorro-antd-dashboard-starter
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/ng-zorro-antd-dashboard-starter)
+[View on StackBlitz ⚡️](https://ng-zorro-antd-dashboard-starter.stackbliz.io)
